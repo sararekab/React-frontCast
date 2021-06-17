@@ -14,7 +14,7 @@ class App extends react.Component {
         Discount: 20%
       </Product>
       <Product title='Book 3' Price='70' />
-      <buttom>Change Price</buttom>
+      <button>Change Price</button>
     
     </div>
     )
