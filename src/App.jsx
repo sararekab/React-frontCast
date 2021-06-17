@@ -4,16 +4,33 @@ import react from 'react'
 import Product from './component/product/product';
 
 class App extends react.Component {
+  state = {
+    products: [
+      {title: 'Book1' , price:'99'},
+      {title: 'Book2' , price:'89'},
+      {title: 'Book3' , price:'59'}
+    ],
+    cars: [
+      {title: 'car1' , price:'99'},
+      {title: 'car2' , price:'89'},
+      {title: 'car3' , price:'59'}
+    ]
+
+  }
  
   render() {
     return (
     <div id="main" className="container">
       <h2> React App</h2>
-      <Product title='Book 1' Price='99' />
-      <Product title='Book 2' Price='89'>
-        Discount: 20%
-      </Product>
-      <Product title='Book 3' Price='70' />
+      {
+        this.state.cars.map((product)=>{
+          return (
+            <Product title={product.title} Price={product.price} />
+          )
+
+        })
+      }
+     
       <button>Change Price</button>
     
     </div>
