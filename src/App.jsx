@@ -6,33 +6,43 @@ import Product from './component/product/product';
 class App extends react.Component {
   state = {
     products: [
-      {title: 'Book1' , price:'99'},
-      {title: 'Book2' , price:'89'},
-      {title: 'Book3' , price:'59'}
+      {title: 'Book1', price: '59'},
+      {title: 'Book2', price: '49'},
+      {title: 'Book3', price: '39'}
     ],
-    cars: [
-      {title: 'car1' , price:'99'},
-      {title: 'car2' , price:'89'},
-      {title: 'car3' , price:'59'}
-    ]
+  }
+
+  changePriceHandler = () => {
+    this.setState({
+      products: [
+        {title: 'Book1', price: '44'},
+        {title: 'Book2', price: '44'},
+        {title: 'Book3', price: '44'}
+      ],
+
+    })
 
   }
- 
   render() {
     return (
     <div id="main" className="container">
       <h2> React App</h2>
-      {
-        this.state.cars.map((product)=>{
-          return (
-            <Product title={product.title} Price={product.price} />
-          )
-
-        })
-      }
+      <Product 
+      title = {this.state.products[0].title}
+      price = {this.state.products[0].price}
+      />
+       <Product 
+      title = {this.state.products[1].title}
+      price = {this.state.products[1].price}
+      />
+       <Product 
+      title = {this.state.products[2].title}
+      price = {this.state.products[2].price}
+      />
      
-      <button>Change Price</button>
-    
+      <button onClick={this.changePriceHandler}>Change Price</button>
+
+                
     </div>
     )
   }
